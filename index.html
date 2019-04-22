@@ -278,7 +278,7 @@
                 var link = document.createElement("a");
                 document.body.appendChild(link);
                 link.download = "html_image.png";
-                link.href = canvas.toDataURL("image/png");
+                link.href = canvas.toDataURL("image/jpeg", 1);
                 link.target = '_blank';
                 link.click();
             });
