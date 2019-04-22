@@ -1,0 +1,78 @@
+var teamA = document.querySelector(".form_select--a");
+var teamB = document.querySelector(".form_select--b");
+var date = document.querySelector(".form_date-input");
+var time = document.querySelector(".form_time-input");
+var inputTeamA = teamA.options[teamA.selectedIndex].value;
+var inputTeamB = teamB.options[teamB.selectedIndex].value;
+var timeInput = time.value;
+var dateInput = date.value;
+var nrlTeams = {
+    'titans': ['./image/titans.png'],
+    'storm': ['./image/storm.png'],
+    'broncos': ['./image/broncos.png'],
+    'roosters': ['./image/roosters.png']
+};
+var imageA = document.querySelector('.main_image--a');
+var imageB = document.querySelector('.main_image--b');
+var teamsText = document.querySelector('.main_p--teams');
+var dateText = document.querySelector('.main_p--date');
+var timeText = document.querySelector('.main_p--time');
+var teamaValue = inputTeamA;
+var teambValue = inputTeamB;
+
+var temaaUpdate = function () {
+    var teamA = document.querySelector(".form_select--a");
+    var inputTeamA = teamA.options[teamA.selectedIndex].value;
+    teamaValue = inputTeamA;
+    imageA.src = nrlTeams[inputTeamA];
+    teamsText.innerText = teamaValue.toUpperCase() + " VS " + teambValue.toUpperCase();
+}
+
+var temabUpdate = function () {
+    var teamB = document.querySelector(".form_select--b");
+    var inputTeamB = teamB.options[teamB.selectedIndex].value;
+    teambValue = inputTeamB;
+    imageB.src = nrlTeams[inputTeamB];
+    teamsText.innerText = teamaValue.toUpperCase() + " VS " + teambValue.toUpperCase();
+}
+
+var dateUpdate = function () {
+    var date = document.querySelector(".form_date-input");
+    var dateInput = new Date(date.value);
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    dateText.innerText = dateInput.toLocaleDateString("en-US", options).toUpperCase()
+}
+
+function tConv24(time24) {
+    var ts = time24;
+    var H = +ts.substr(0, 2);
+    var h = (H % 12) || 12;
+    h = (h < 10)?("0"+h):h;  // leading 0 at the left for 1 digit hours
+    var ampm = H < 12 ? " AM" : " PM";
+    ts = h + ts.substr(2, 3) + ampm;
+    return ts;
+};
+
+var timeUpdate = function () {
+    var time = document.querySelector(".form_time-input");
+    var timeInput = time.value;
+    timeText.innerText = tConv24(timeInput).toUpperCase()
+}
+
+teamA.addEventListener('change', temaaUpdate);
+teamB.addEventListener('change', temabUpdate);
+date.addEventListener('change', dateUpdate);
+time.addEventListener('change', timeUpdate);
+
+var canvas = document.createElement('canvas');
+document.getElementById("download").addEventListener("click", function() {
+    html2canvas(document.querySelector('.main-box'), {
+    dpi: 144}).then(function(canvas) {
+        var link = document.createElement("a");
+        document.body.appendChild(link);
+        link.download = "html_image.jpeg";
+        link.href = canvas.toDataURL("image/jpeg", 1);
+        link.target = '_blank';
+        link.click();
+    });
+});
