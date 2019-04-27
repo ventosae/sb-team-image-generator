@@ -1,0 +1,27 @@
+{
+  "name": "sb-img-generator",
+  "version": "1.0.0",
+  "description": "images gen g g",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "pixel-glass": "^1.0.13"
+  },
+  "scripts": {
+    "test": "test",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ventosae/sb-team-image-generator.git"
+  },
+  "author": "frontendnewbie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ventosae/sb-team-image-generator/issues"
+  },
+  "homepage": "https://github.com/ventosae/sb-team-image-generator#readme"
+}

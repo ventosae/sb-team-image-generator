@@ -6,161 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Head To Head Generator</title>
     <meta name="description" content="">
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-    body {
-        background-color:#F0F1F2;
-        font-family: Arial, Helvetica, sans-serif;
-    }
-    main {
-        background-color: #fff;
-        display: flex;
-        margin: auto;
-        width: 802px;
-        height: auto;
-        justify-content: center;
-        box-shadow: 0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.2);
-        height: 200px;
-        margin-top: 5%;
-    }
-
-    .main_p {
-        justify-self: center;
-        align-self: center;
-    }
-
-    .main_image {
-        width: 100%;
-        height: auto;
-        max-width: 150px;
-        max-height: 150px;
-        justify-self: center;
-        align-self: center;
-
-    }
-
-    .main_p--teams {
-        grid-area: teams;
-    }
-
-    .main_p--date {
-        grid-area: date;
-    }
-
-    .main_p--time {
-        grid-area: time;
-    }
-
-    .main_image--a {
-        grid-area: image-a;
-    }
-
-    .main_image--b {
-        grid-area: image-b;
-    }
-
-    .main-box {
-        display: grid;
-        align-self: center;
-        grid-template-columns: 1fr 1fr 1fr;
-        width: 802px;
-        grid-template-rows: 1fr 1fr 1fr;
-        height: 200px;
-        border: solid 1px #F0F1F2;
-        grid-template-areas: 
-            "image-a teams image-b"
-            "image-a date image-b"
-            "image-a time image-b"
-    }
-
-    .form_main {
-        margin: auto;
-        width: 802px;
-        margin-top: 5%;
-    }
-
-    .form {
-        text-decoration: none;
-        border: 0;
-        position: relative;
-    }
-
-    .form_filedset {
-        text-decoration: none;
-        border: 0;
-        margin-top: 3%;
-    }
-
-    .form_teams, .form_dateime {
-        display: flex;
-    }
-
-    .form_select, .form_date-input, .form_time-input {
-        height: 25px;
-        width: 220px;
-        background: none;
-        border: none;
-        border-bottom: 1px solid #F0F1F2;
-        box-shadow: 0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.2);
-        margin-right: 60px;
-    }
-
-    .form_label {
-        font-size: 10px;
-        padding-bottom: 5px;
-    }
-
-    .form_team-a, .form_team-b, .form_date, .form_time {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .button {
-        border: none;
-        outline: none;
-        display: block;
-        padding: 0;
-        z-index: 98;
-        margin: 0 auto;
-        -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
-        box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
-        border-radius: 50%;
-        height: 100px;
-        width: 100px;
-        background-color: #fff;
-        transition: 0.2s;
-        text-align: center;
-        position: absolute;
-        top: 5px;
-        right: 80px;
-    }
-
-    .button:active {
-        transform: scale(0.90);
-        box-shadow: 0 2px 15px 0 rgba(0,0,0,0.3);
-    }
-
-    .button:hover {
-        cursor: pointer;
-        background-color: lighten($circle, 10%);
-        box-shadow: 0 8px 15px 0 rgba(0,0,0,0.3);
-    }
-
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <!-- Pixel Glass -->
+<style>
+        HTML {
+          background-repeat: no-repeat;
+          background-position:  50% 0;
+          background-image: url( "image/moc.jpg" );
+        }
+      </style>
+      <link href="../node_modules/pixel-glass/styles.css" rel="stylesheet">
+      <script src="../node_modules/pixel-glass/script.js"></script>
+      <!-- // Pixel Glass -->
 </head>
 <body>
 
     <main class = "main">
         <div class="main-box">
-            <img src="./image/titans.png" alt="" class="main_image main_image--a">
+            <div class="main_image-wrapper main_image--a">
+                <img src="./image/titans.png" alt="" id="image-a" class="main_image main_image--a">
+            </div>
             <p class="main_p main_p--teams">vs</p>
             <p class="main_p main_p--date">THURSDAY 14 MARCH</p>
             <p class="main_p main_p--time">7:50PM</p>
-            <img src="./image/titans.png" alt="" class="main_image main_image--b">
+            <p class="main_p main_p--arena">AAMI PARK</p>
+            <p class="main_p main_p--tip">tip</p>
+            <p class="main_p main_p--pick">panthers</p>
+            <div class="main_image-wrapper main_image--b">
+                <img src="./image/titans.png" alt="" id="image-b" class="main_image main_image--b">
+            </div>
         </div>
     </main>
     <section class="form_main">
@@ -174,6 +49,8 @@
                                     <option value="titans">titans</option>
                                     <option value="roosters">roosters</option>
                                     <option value="broncos">broncos</option>
+                                    <option value="sharks">sharks</option>
+                                    <option value="panthers">panthers</option>
                             </select>
                         </li>
                         <li class="form_team-b">
@@ -183,6 +60,8 @@
                                     <option value="titans">titans</option>
                                     <option value="roosters">roosters</option>
                                     <option value="broncos">broncos</option>
+                                    <option value="sharks">sharks</option>
+                                    <option value="panthers">panthers</option>
                             </select>
                         </li>
                     </ul>

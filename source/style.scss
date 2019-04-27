@@ -1,3 +1,163 @@
-h1 {
-    color: red;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        font-family: 'Roboto', sans-serif;
+    }
+    body {
+        background-color:#F0F1F2;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main {
+        background-color: #fff;
+        display: flex;
+        margin: auto;
+        width: 802px;
+        height: auto;
+        justify-content: center;
+        box-shadow: 0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.2);
+        height: 220px;
+        margin-top: 5%;
+    }
+
+    .main_p {
+        justify-self: center;
+        align-self: center;
+    }
+
+    .main_image {
+        width: 100%;
+        height: auto;
+        max-width: 150px;
+        max-height: 150px;
+        justify-self: center;
+        align-self: center;
+
+    }
+
+    .main_p--teams {
+        grid-area: teams;
+    }
+
+    .main_p--date {
+        grid-area: date;
+    }
+
+    .main_p--time {
+        grid-area: time;
+    }
+
+    .main_image--a {
+        grid-area: image-a;
+    }
+
+    .main_image--b {
+        grid-area: image-b;
+    }
+
+    .main_p--arena {
+        grid-area: arena;
+    }
+
+    .main_p--tip {
+        grid-area: tip;
+    }
+
+    .main_p--pick {
+        grid-area: pick;
+    }
+
+    .main_image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .main-box {
+        display: grid;
+        align-self: center;
+        grid-template-columns: 1fr 90px 260px 1fr;
+        width: 802px;
+        grid-template-rows: 40px 30px 40px 50px 60px;
+        height: 220px;
+        border: solid 1px #F0F1F2;
+        grid-template-areas: 
+            "image-a teams teams image-b"
+            "image-a date date image-b"
+            "image-a time time image-b"
+            "image-a arena arena image-b"
+            "image-a tip pick image-b"
+    }
+
+    .form_main {
+        margin: auto;
+        width: 802px;
+        margin-top: 5%;
+    }
+
+    .form {
+        text-decoration: none;
+        border: 0;
+        position: relative;
+    }
+
+    .form_filedset {
+        text-decoration: none;
+        border: 0;
+        margin-top: 3%;
+    }
+
+    .form_teams, .form_dateime {
+        display: flex;
+    }
+
+    .form_select, .form_date-input, .form_time-input {
+        height: 25px;
+        width: 220px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #F0F1F2;
+        box-shadow: 0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.2);
+        margin-right: 60px;
+    }
+
+    .form_label {
+        font-size: 10px;
+        padding-bottom: 5px;
+    }
+
+    .form_team-a, .form_team-b, .form_date, .form_time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .button {
+        border: none;
+        outline: none;
+        display: block;
+        padding: 0;
+        z-index: 98;
+        margin: 0 auto;
+        -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+        box-shadow: 0 6px 10px 0 rgba(0,0,0,0.3);
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        background-color: #fff;
+        transition: 0.2s;
+        text-align: center;
+        position: absolute;
+        top: 5px;
+        right: 80px;
+    }
+
+    .button:active {
+        transform: scale(0.90);
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,0.3);
+    }
+
+    .button:hover {
+        cursor: pointer;
+        background-color: lighten(#fff, 10%);
+        box-shadow: 0 8px 15px 0 rgba(0,0,0,0.3);
+    }
