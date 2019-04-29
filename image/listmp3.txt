@@ -1,0 +1,8 @@
+broncos.jpg   eels.jpg	    rabbitohs.jpg   sharks.jpg	  west_tigers.jpg
+bulldogs.jpg  knights.jpg   raiders.jpg     storm.jpg
+cowboys.jpg   moc.jpg	    roosters.jpg    titans.jpg
+dragons.jpg   panthers.jpg  sea_eagles.jpg  warriors.jpg
+
+/.:
+bin  dev  git-bash.exe	LICENSE.txt  post-install.bat  README.portable	usr
+cmd  etc  git-cmd.exe	mingw64      proc	       tmp

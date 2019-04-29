@@ -7,29 +7,56 @@ var inputTeamB = teamB.options[teamB.selectedIndex].value;
 var timeInput = time.value;
 var dateInput = date.value;
 var TEAMS = {
-    titans: {
-        image: './image/titans.png',
-        color: '#fad701'
-    },
-    storm: {
-        image: './image/storm.png',
-        color: '#2075bc'
-    },
     broncos: {
-        image: './image/broncos.png',
-        color: '#2075bc'
+        image: './image/broncos.jpg',
     },
-    roosters: {
-        image: './image/roosters.png',
-        color: '#fad701'
+    bulldogs: {
+        image: './bulldogs.jpg',
     },
-    sharks: {
-        image: './image/sharks.png',
-        color: '#008bc1'
+    cowboys: {
+        image: './image/cowboys.jpg',
+    },
+    dragons: {
+        image: './image/dragons.jpg',
+    },
+    eels: {
+        image: './image/eels.jpg',
+    },
+    knights: {
+        image: './image/knights.jpg',
+    },
+    moc: {
+        image: './image/moc.jpg',
     },
     panthers: {
-        image: './image/panthers.png',
-        color: '#000000'
+        image: './image/panthers.jpg',
+    },
+    raiders: {
+        image: './image/raiders.jpg',
+    },
+    sea_eagles: {
+        image: './image/sea_eagles.jpg',
+    },
+    storm: {
+        image: './image/storm.jpg',
+    },
+    warriors: {
+        image: './image/warriors.jpg',
+    },
+    rabbitohs: {
+        image: './image/rabbitohs.jpg',
+    },
+    sharks: {
+        image: './image/sharks.jpg',
+    },
+    roosters: {
+        image: './image/roosters.jpg',
+    },
+    titans: {
+        image: './image/titans.jpg',
+    },
+    west_tigers: {
+        image: './image/west_tigers.jpg',
     }
 };
 var imageA = document.querySelector('#image-a');
@@ -48,7 +75,7 @@ var temaaUpdate = function () {
     var inputTeamA = teamA.options[teamA.selectedIndex].value;
     teamaValue = inputTeamA;
     imageA.src = TEAMS[inputTeamA]["image"];
-    imageADiv.style.backgroundColor = TEAMS[inputTeamA]["color"];
+    // imageADiv.style.backgroundColor = TEAMS[inputTeamA]["color"];
     teamsText.innerText = teamaValue.toUpperCase() + " V " + teambValue.toUpperCase();
 }
 
@@ -57,7 +84,7 @@ var temabUpdate = function () {
     var inputTeamB = teamB.options[teamB.selectedIndex].value;
     teambValue = inputTeamB;
     imageB.src = TEAMS[inputTeamB]["image"];
-    imageBDiv.style.backgroundColor = TEAMS[inputTeamB]["color"];
+    // imageBDiv.style.backgroundColor = TEAMS[inputTeamB]["color"];
     teamsText.innerText = teamaValue.toUpperCase() + " V " + teambValue.toUpperCase();
 }
 

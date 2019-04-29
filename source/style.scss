@@ -28,8 +28,6 @@
     .main_image {
         width: 100%;
         height: auto;
-        max-width: 150px;
-        max-height: 150px;
         justify-self: center;
         align-self: center;
 
@@ -80,7 +78,6 @@
         width: 802px;
         grid-template-rows: 40px 30px 40px 50px 60px;
         height: 220px;
-        border: solid 1px #F0F1F2;
         grid-template-areas: 
             "image-a teams teams image-b"
             "image-a date date image-b"
