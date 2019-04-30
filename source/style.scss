@@ -89,7 +89,7 @@
     .form_main {
         margin: auto;
         width: 802px;
-        margin-top: 5%;
+        margin-top: 8%;
     }
 
     .form {
@@ -121,6 +121,12 @@
     .form_label {
         font-size: 10px;
         padding-bottom: 5px;
+
+        &--checkbox {
+            position: absolute;
+            top: -43px;
+            left: 85px;
+        }
     }
 
     .form_team-a, .form_team-b, .form_date, .form_time {
@@ -128,7 +134,7 @@
         flex-direction: column;
     }
 
-    .button {
+    .button-img {
         border: none;
         outline: none;
         display: block;
@@ -148,13 +154,126 @@
         right: 80px;
     }
 
-    .button:active {
+    .button-img:active {
         transform: scale(0.90);
         box-shadow: 0 2px 15px 0 rgba(0,0,0,0.3);
     }
 
-    .button:hover {
+    .button-img:hover {
         cursor: pointer;
         background-color: lighten(#fff, 10%);
         box-shadow: 0 8px 15px 0 rgba(0,0,0,0.3);
+    }
+
+    /* toggle */
+
+    .button
+    {
+        position: absolute;
+        top: -31%;
+        width: 74px;
+        height: 35px;
+        margin: -20px auto 0 auto;
+        overflow: hidden;
+        box-shadow: 0rem 0.125rem 0.125rem 0rem rgba(0, 0, 0, 0.2);
+    }
+
+    .checkbox
+    {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .knobs
+    {
+        z-index: 2;
+    }
+
+
+    #button-18 .knobs:before, #button-18 .knobs span
+    {
+        content: 'AFL';
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        text-align: center;
+        line-height: 1;
+        background-color: #686B70;
+        border-radius: 2px;
+    }
+
+    #button-18 .knobs:before
+    {
+        top: 50%;
+        left: 8px;
+        width: 20px;
+        height: 10px;
+        margin-top: -5px;
+        background-color: transparent;
+        z-index: 2;
+    }
+
+    #button-18 .knobs span
+    {
+        width: 20px;
+        height: 10px;
+        padding: 9px 4px;
+        transition: 0.3s ease all, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+        z-index: 1;
+    }
+
+    #button-18 .checkbox:active + .knobs:before
+    {
+        left: 10px;
+        width: 46px;
+        height: 4px;
+        color: transparent;
+        margin-top: -2px;
+        background-color: #686B70;
+        transition: 0.3s ease all;
+        overflow: hidden;
+    }
+
+    #button-18 .checkbox:active + .knobs span
+    {
+        width: 58px;
+    }
+
+    #button-18 .checkbox:checked:active + .knobs:before
+    {
+        left: auto;
+        right: 10px;
+        background-color: #686B70;
+    }
+
+    #button-18 .checkbox:checked:active + .knobs span
+    {
+        margin-left: -38px;
+    }
+
+    #button-18 .checkbox:checked + .knobs:before
+    {
+        content: 'NRL';
+        left: 47px;
+        color: white;
+    }
+
+    #button-18 .checkbox:checked + .knobs span
+    {
+        left: 42px;
+        background-color: #686B70;
+    }
+
+    #button-18 .checkbox:checked ~ .layer
+    {
+        background-color: #fcebeb;
     }

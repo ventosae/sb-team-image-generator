@@ -1,17 +1,9 @@
-var teamA = document.querySelector(".form_select--a");
-var teamB = document.querySelector(".form_select--b");
-var date = document.querySelector(".form_date-input");
-var time = document.querySelector(".form_time-input");
-var inputTeamA = teamA.options[teamA.selectedIndex].value;
-var inputTeamB = teamB.options[teamB.selectedIndex].value;
-var timeInput = time.value;
-var dateInput = date.value;
 var TEAMS = {
     broncos: {
         image: './image/broncos.jpg',
     },
     bulldogs: {
-        image: './bulldogs.jpg',
+        image: './image/bulldogs.jpg',
     },
     cowboys: {
         image: './image/cowboys.jpg',
@@ -25,9 +17,6 @@ var TEAMS = {
     knights: {
         image: './image/knights.jpg',
     },
-    moc: {
-        image: './image/moc.jpg',
-    },
     panthers: {
         image: './image/panthers.jpg',
     },
@@ -40,14 +29,14 @@ var TEAMS = {
     storm: {
         image: './image/storm.jpg',
     },
+    sharks: {
+        image: './image/sharks.jpg',
+    },
     warriors: {
         image: './image/warriors.jpg',
     },
     rabbitohs: {
         image: './image/rabbitohs.jpg',
-    },
-    sharks: {
-        image: './image/sharks.jpg',
     },
     roosters: {
         image: './image/roosters.jpg',
@@ -59,6 +48,30 @@ var TEAMS = {
         image: './image/west_tigers.jpg',
     }
 };
+
+var teamsObj = Object.entries(TEAMS);
+var teamA = document.querySelector(".form_select--a");
+var teamB = document.querySelector(".form_select--b");
+
+var dropDownFill = function(team) {
+    teamsObj.forEach(function(e) {
+        var option = document.createElement("option");
+        option.text = e[0]
+        option.value = e[0];
+        team.add(option);
+    });
+}
+
+dropDownFill(teamA);
+dropDownFill(teamB);
+
+var teamSelect = document.querySelector(".form_select ");
+var date = document.querySelector(".form_date-input");
+var time = document.querySelector(".form_time-input");
+var inputTeamA = teamA.options[teamA.selectedIndex].value;
+var inputTeamB = teamB.options[teamB.selectedIndex].value;
+var timeInput = time.value;
+var dateInput = date.value;
 var imageA = document.querySelector('#image-a');
 var imageB = document.querySelector('#image-b');
 var teamsText = document.querySelector('.main_p--teams');
@@ -76,7 +89,7 @@ var temaaUpdate = function () {
     teamaValue = inputTeamA;
     imageA.src = TEAMS[inputTeamA]["image"];
     // imageADiv.style.backgroundColor = TEAMS[inputTeamA]["color"];
-    teamsText.innerText = teamaValue.toUpperCase() + " V " + teambValue.toUpperCase();
+    teamsText.innerText = teamaValue.replace('_', ' ').toUpperCase() + " V " + teambValue.replace('_', ' ').toUpperCase();
 }
 
 var temabUpdate = function () {
@@ -85,7 +98,7 @@ var temabUpdate = function () {
     teambValue = inputTeamB;
     imageB.src = TEAMS[inputTeamB]["image"];
     // imageBDiv.style.backgroundColor = TEAMS[inputTeamB]["color"];
-    teamsText.innerText = teamaValue.toUpperCase() + " V " + teambValue.toUpperCase();
+    teamsText.innerText = teamaValue.replace('_', ' ').toUpperCase() + " V " + teambValue.replace('_', ' ').toUpperCase();
 }
 
 var dateUpdate = function () {
@@ -128,3 +141,5 @@ document.getElementById("download").addEventListener("click", function() {
         link.click();
     });
 });
+
+ 
