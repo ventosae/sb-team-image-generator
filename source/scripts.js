@@ -157,8 +157,19 @@ var TEAMS = {
     }
 };
 
+var AFL_ARENAS = ["MCG","Adelaide Oval","Marvel Stadium","The Gabba","Sydney Showground","Optus Stadium","SCG","GMHBA","Metricon Stadium","UNSW Canberra Oval","University of Tasmania","Mars Stadium","Blundstone Arena","TIO Stadium","Adelaide Arena","Riverway Stadium","TIO Traeger Park"];
+
+var NRL_ARENAS = ["AAMI Park","McDonald Jones Stadium","Sydney Cricket Ground","Mt Smart Stadium","Leichhardt Oval","1300Smiles Stadium","Panthers Stadium","CBus Super Stadium","Jubilee Stadium","GIO Stadium","Suncorp Stadium","Shark Park","Lottoland","ANZ Stadium","Campbelltown Stadium","AMI Stadium Christchurch","Carrington Park Bathurst","Sunshine Coast Stadium","WIN Stadium","Western Sydney Stadium","Scully Park Tamworth","McDonalds Stadium","Glen Willow Stadium","Belmore Oval","Perth Stadium","TIO Stadium","Central Coast Stadium","Westpac Stadium"];
+
+AFL_ARENAS.sort();
+NRL_ARENAS.sort();
+
 var teamA = document.querySelector(".form_select--a");
 var teamB = document.querySelector(".form_select--b");
+var arenaSelector = document.querySelector(".form_select--arena");
+var togglerAFL = getComputedStyle(document.querySelector('.knobs'), ':before').getPropertyValue('content');
+var tipValue = document.querySelector('.main_p--pick-text');
+var tipSelector = document.querySelector('.form_select--pick');
 
 var dropDownFill = function(team) {
     var teamsObj = Object.entries(TEAMS);
@@ -168,7 +179,32 @@ var dropDownFill = function(team) {
         option.value = e[0];
         team.add(option);
     });
-}
+};
+
+var dropDownFillArenas = function() {
+    var arenaSelectorContent = getComputedStyle(document.querySelector('.knobs'), ':before').getPropertyValue('content');
+    var afl = togglerAFL;
+    var arenas = arenaSelectorContent == afl ? arenas = AFL_ARENAS : arenas = NRL_ARENAS;
+    arenas.forEach(function(e) {
+        var option = document.createElement("option");
+        option.text = e;
+        option.value = e;
+        arenaSelector.add(option);
+    });
+};
+
+var dropDownFillTip = function() {
+    var teama = teamA.value;
+    var teamb = teamB.value;
+    var picsArea = new Array;
+    picsArea.push(teama,teamb);
+    picsArea.forEach(function(e) {
+        var option = document.createElement("option");
+        option.text = e;
+        option.value = e;
+        tipSelector.add(option);
+    });
+};
 
 dropDownFill(teamA);
 dropDownFill(teamB);
@@ -190,7 +226,7 @@ var teambValue = inputTeamB;
 var imageADiv = document.querySelector('.main_image--a');
 var imageBDiv = document.querySelector('.main_image--b');
 var toggler = document.querySelector('.checkbox');
-var togglerAFL = getComputedStyle(document.querySelector('.knobs'), ':before').getPropertyValue('content');
+var arenaValue = document.querySelector('.main_p--arena');
 
 
 var temaaUpdate = function () {
@@ -200,7 +236,7 @@ var temaaUpdate = function () {
     imageA.src = TEAMS[inputTeamA]["image"];
     // imageADiv.style.backgroundColor = TEAMS[inputTeamA]["color"];
     teamsText.innerText = teamaValue.replace('_', ' ').toUpperCase() + " v " + teambValue.replace('_', ' ').toUpperCase();
-}
+};
 
 var temabUpdate = function () {
     var teamB = document.querySelector(".form_select--b");
@@ -209,13 +245,13 @@ var temabUpdate = function () {
     imageB.src = TEAMS[inputTeamB]["image"];
     // imageBDiv.style.backgroundColor = TEAMS[inputTeamB]["color"];
     teamsText.innerText = teamaValue.replace('_', ' ').toUpperCase() + " v " + teambValue.replace('_', ' ').toUpperCase();
-}
+};
 
 function getNumberWithOrdinal(n) {
     var s=["th","st","nd","rd"],
     v=n%100;
     return n+(s[(v-20)%10]||s[v]||s[0]);
- }
+ };
 
 var dateUpdate = function () {
     var date = document.querySelector(".form_date-input");
@@ -225,8 +261,7 @@ var dateUpdate = function () {
     var dateTextSplit = dateTextOption.split(' ')
     var dateTextNumber = getNumberWithOrdinal(dateTextSplit[1]).toUpperCase();
     dateText.innerText = dateTextSplit[0] + ' ' + dateTextNumber + ' ' + dateTextSplit[2];
-}
-
+};
 function tConv24(time24) {
     var ts = time24;
     var H = +ts.substr(0, 2);
@@ -237,13 +272,11 @@ function tConv24(time24) {
     return ts;
 };
 
-
-
 var timeUpdate = function () {
     var time = document.querySelector(".form_time-input");
     var timeInput = time.value;
     timeText.innerText = tConv24(timeInput).toUpperCase()
-}
+};
 
 var dropDownRemove = function (team) {
     var dropLenght = team.options.length;
@@ -264,11 +297,42 @@ var gameSwitchHandeler = function () {
     temabUpdate();
 };
 
+var stadiumHandler = function () {
+    dropDownRemove(arenaSelector);
+    dropDownFillArenas();
+};
+
+var tipHandler = function () {
+    dropDownRemove(tipSelector);
+    dropDownFillTip();
+};
+
+var stadiumpUpdate = function () {
+    var stadiumSelect = document.querySelector(".form_select--arena");
+    var inputStadium = stadiumSelect.value
+    arenaValue.innerHTML = inputStadium.toUpperCase();
+};
+
+var tipUpdate = function () {
+    var tipSelect = document.querySelector('.form_select--pick');
+    var inputTip = tipSelect.value
+    tipValue.innerHTML = inputTip.toUpperCase().replace('_', ' ');
+};
+
 teamA.addEventListener('change', temaaUpdate);
 teamB.addEventListener('change', temabUpdate);
+teamA.addEventListener('change', tipHandler);
+teamB.addEventListener('change', tipHandler);
+teamA.addEventListener('change', tipUpdate);
+teamB.addEventListener('change', tipUpdate);
 date.addEventListener('change', dateUpdate);
 time.addEventListener('change', timeUpdate);
 toggler.addEventListener('change', gameSwitchHandeler);
+toggler.addEventListener('change', stadiumHandler);
+toggler.addEventListener('change', tipHandler);
+arenaSelector.addEventListener('change', stadiumpUpdate);
+tipSelector.addEventListener('change', tipUpdate);
+
 
 var canvas = document.createElement('canvas');
 document.getElementById("download").addEventListener("click", function() {
@@ -287,3 +351,5 @@ temaaUpdate();
 temabUpdate();
 dateUpdate();
 timeUpdate();
+dropDownFillArenas();
+dropDownFillTip();
