@@ -1,0 +1,8 @@
+bulldogs.jpg  demons.jpg    giants.jpg	   power.jpg	  swans.jpg
+carlton.jpg   dockers.jpg   hawks.jpg	   rabbitohs.jpg  tigers.jpg
+cats.jpg      eagles.jpg    kangaroos.jpg  saints.jpg
+crows.jpg     essendon.jpg  magpies.jpg    suns.jpg
+
+/.:
+bin  dev  git-bash.exe	LICENSE.txt  post-install.bat  README.portable	usr
+cmd  etc  git-cmd.exe	mingw64      proc	       tmp

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Head To Head Generator</title>
     <meta name="description" content="">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
     <!-- Pixel Glass -->
 
@@ -22,8 +22,12 @@
             <p class="main_p main_p--date">THURSDAY 14 MARCH</p>
             <p class="main_p main_p--time">7:50PM</p>
             <p class="main_p main_p--arena">AAMI PARK</p>
-            <p class="main_p main_p--tip">tip</p>
-            <p class="main_p main_p--pick">panthers</p>
+            <div class="main_p main_p--tip">
+                <p class="main_p main_p--tip-text">tip</p>
+            </div>
+            <div class="main_p main_p--pick">
+                <p class="main_p main_p--pick-text">panthers</p>
+            </div>
             <div class="main_image-wrapper main_image--b">
                 <img src="./image/titans.png" alt="" id="image-b" class="main_image main_image--b">
             </div>
@@ -41,7 +45,6 @@
                         <li class="form_team-b">
                             <label for="teams" class="form_label">Team B</label>
                             <select class="form_select form_select--b" name="teams">
- 
                             </select>
                         </li>
                     </ul>
@@ -50,11 +53,23 @@
                     <ul class="form_dateime">
                         <li class="form_date">
                             <label for="date" class="form_label">Date</label>
-                            <input type="date" class="form_date-input">
+                            <input type="date" class="form_date-input"value="2019-04-18">
                         </li>
                         <li class="form_time">
-                            <label for=" " class="form_label">Time</label>
-                            <input type="time" class="form_time-input">
+                            <label for="time" class="form_label">Time</label>
+                            <input type="time" class="form_time-input" value="19:50">
+                        </li>
+                    </ul>
+                    <ul class="form_arena-tip">
+                        <li class="form_arena">
+                            <label for="teams" class="form_label">Stadiums</label>
+                            <select class="form_select form_select--arena" name="arena">
+                            </select>
+                        </li>
+                        <li class="form_pick">
+                            <label for="pick" class="form_label">Tip</label>
+                            <select class="form_select form_select--pick" name="pick">
+                            </select>
                         </li>
                     </ul>
                     <div>
