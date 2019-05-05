@@ -319,6 +319,12 @@ var tipUpdate = function () {
     tipValue.innerHTML = inputTip.toUpperCase().replace('_', ' ');
 };
 
+var intialState = function() {
+    document.querySelector('.checkbox').checked = true;
+    teamA.value = 'sharks';
+    teamA.value = 'panthers';
+};
+
 teamA.addEventListener('change', temaaUpdate);
 teamB.addEventListener('change', temabUpdate);
 teamA.addEventListener('change', tipHandler);
@@ -335,21 +341,25 @@ tipSelector.addEventListener('change', tipUpdate);
 
 
 var canvas = document.createElement('canvas');
+
 document.getElementById("download").addEventListener("click", function() {
-    html2canvas(document.querySelector('.main-box'), { scale: 5, width: 802, 
+    html2canvas(document.querySelector('.main-box'), { scale: 2, width: 802, 
         height: 220}).then(function(canvas) {
         var link = document.createElement("a");
         document.body.appendChild(link);
-        link.download = "html_image.jpeg";
+        link.download = teamA.value + '_' + 'vs' + '_' + teamB.value + '_'+ date.value + '_' + time.value + '_' + arenaSelector.value.replace(' ', '_') + '_' + tipSelector.value + '.jpg';
         link.href = canvas.toDataURL("image/jpeg", 1);
         link.target = '_blank';
         link.click();
     });
 });
 
+intialState();
 temaaUpdate();
 temabUpdate();
 dateUpdate();
 timeUpdate();
 dropDownFillArenas();
 dropDownFillTip();
+arenaSelector.value = "AAMI Park";
+stadiumpUpdate();
