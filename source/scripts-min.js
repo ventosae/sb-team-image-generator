@@ -102,6 +102,9 @@ var NRL = {
         },
         swans: {
             image: "./image/afl/swans.jpg"
+        },
+        lions: {
+            image: "./image/afl/lions.png"
         }
     },
     TEAMS = {
@@ -155,7 +158,7 @@ var NRL = {
         }
     },
     AFL_ARENAS = ["MCG", "Adelaide Oval", "Marvel Stadium", "The Gabba", "Sydney Showground", "Optus Stadium", "SCG", "GMHBA", "Metricon Stadium", "UNSW Canberra Oval", "University of Tasmania", "Mars Stadium", "Blundstone Arena", "TIO Stadium", "Adelaide Arena", "Riverway Stadium", "TIO Traeger Park"],
-    NRL_ARENAS = ["AAMI Park", "McDonald Jones Stadium", "Sydney Cricket Ground", "Mt Smart Stadium", "Leichhardt Oval", "Queensland Country Bank Stadium", "Panthers Stadium", "CBus Super Stadium", "Jubilee Stadium", "GIO Stadium", "Suncorp Stadium", "Shark Park", "Lottoland", "ANZ Stadium", "Campbelltown Stadium", "AMI Stadium Christchurch", "Carrington Park Bathurst", "Sunshine Coast Stadium", "WIN Stadium", "BankWest Stadium", "Scully Park Tamworth", "McDonalds Stadium", "Glen Willow Stadium", "Belmore Oval", "Perth Stadium", "TIO Stadium", "Central Coast Stadium", "Westpac Stadium"];
+    NRL_ARENAS = ["AAMI Park", "McDonald Jones Stadium", "Sydney Cricket Ground", "Mt Smart Stadium", "Leichhardt Oval", "QLD Country Bank Stadium", "Panthers Stadium", "CBus Super Stadium", "Jubilee Stadium", "GIO Stadium", "Suncorp Stadium", "Shark Park", "Lottoland", "ANZ Stadium", "Campbelltown Stadium", "AMI Stadium Christchurch", "Carrington Park Bathurst", "Sunshine Coast Stadium", "WIN Stadium", "BankWest Stadium", "Scully Park Tamworth", "McDonalds Stadium", "Glen Willow Stadium", "Belmore Oval", "Perth Stadium", "TIO Stadium", "Central Coast Stadium", "Westpac Stadium"];
 AFL_ARENAS.sort(), NRL_ARENAS.sort();
 var teamA = document.querySelector(".form_select--a"),
     teamB = document.querySelector(".form_select--b"),

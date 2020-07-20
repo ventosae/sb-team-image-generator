@@ -1,1 +1,347 @@
-*{margin:0;padding:0;list-style-type:none;font-family:'Roboto Condensed',sans-serif}body{background-color:#f0f1f2}main{background-color:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;margin:auto;width:802px;height:auto;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-shadow:0 .125rem .125rem 0 rgba(0,0,0,.2);box-shadow:0 .125rem .125rem 0 rgba(0,0,0,.2);height:220px;margin-top:5%}.main_p{justify-self:center;-ms-flex-item-align:center;align-self:center}.main_image{width:100%;height:auto;justify-self:center;-ms-flex-item-align:center;align-self:center;max-height:220px}.main_p--teams{grid-area:teams;font-size:26px;font-weight:700;padding-top:20px;background-color:#ececec}.main_p--date{grid-area:date;font-size:24px;padding-top:4px}.main_p--time{grid-area:time;font-size:26px;padding-top:26px}.main_image--a{grid-area:image-a}.main_image--b{grid-area:image-b}.main_p--arena{grid-area:arena;font-size:26px;font-weight:700;margin-top:-9px}.main_p--tip{display:grid;grid-area:tip;height:100%;width:100%;background-color:#2075bc}.main_p--tip-text{font-size:26px;font-weight:700;text-transform:uppercase;padding-top:2px;color:#fff}.main_p--pick{grid-area:pick;display:grid;height:100%;width:100%;background-color:#fad701}.main_p--pick-text{font-size:26px;font-weight:700;text-transform:uppercase;padding-top:2px}.main_image-wrapper{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-ms-flex-line-pack:center;align-content:center}.main-box{display:grid;align-self:center;grid-template-columns:1fr 90px 260px 1fr;width:802px;grid-template-rows:40px 30px 40px 50px 60px;height:220px;background-color:#ececec;grid-template-areas:"image-a teams teams image-b" "image-a date date image-b" "image-a time time image-b" "image-a arena arena image-b" "image-a tip pick image-b"}.form_main{margin:auto;width:802px;margin-top:100px}.form{text-decoration:none;border:0;position:relative}.form_filedset{text-decoration:none;border:0;margin-top:3%}.form_dateime,.form_teams{display:-webkit-box;display:-ms-flexbox;display:flex}.form_date-input,.form_select,.form_time-input{height:25px;width:220px;background:0 0;border:none;border-bottom:1px solid #f0f1f2;-webkit-box-shadow:0 .125rem .125rem 0 rgba(0,0,0,.2);box-shadow:0 .125rem .125rem 0 rgba(0,0,0,.2);margin-right:60px}.form_label{font-size:10px;padding-bottom:5px}.form_label--checkbox{position:absolute;top:-43px;left:85px}.form_date,.form_team-a,.form_team-b,.form_time{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.button-img{border:none;outline:0;display:block;padding:0;z-index:98;margin:0 auto;-webkit-box-shadow:0 6px 10px 0 rgba(0,0,0,.3);box-shadow:0 6px 10px 0 rgba(0,0,0,.3);border-radius:50%;height:100px;width:100px;background-color:#fff;-webkit-transition:.2s;transition:.2s;text-align:center;position:absolute;top:20%;right:80px}.button-img:active{-webkit-transform:scale(.9);transform:scale(.9);-webkit-box-shadow:0 2px 15px 0 rgba(0,0,0,.3);box-shadow:0 2px 15px 0 rgba(0,0,0,.3)}.button-img:hover{cursor:pointer;background-color:#fff;-webkit-box-shadow:0 8px 15px 0 rgba(0,0,0,.3);box-shadow:0 8px 15px 0 rgba(0,0,0,.3)}.form_arena-tip{display:-webkit-box;display:-ms-flexbox;display:flex;margin-top:3%}.form_arena,.form_pick{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.button{position:absolute;top:-20%;width:74px;height:35px;margin:-20px auto 0 auto;overflow:hidden;-webkit-box-shadow:0 .125rem .125rem 0 rgba(0,0,0,.2);box-shadow:0 .125rem .125rem 0 rgba(0,0,0,.2)}.checkbox{position:relative;width:100%;height:100%;padding:0;margin:0;opacity:0;cursor:pointer;z-index:3}.knobs{z-index:2}#button-18 .knobs span,#button-18 .knobs:before{content:'AFL';position:absolute;top:4px;left:4px;color:#fff;font-size:10px;font-weight:700;text-align:center;line-height:1;background-color:#686b70;border-radius:2px}#button-18 .knobs:before{top:50%;left:8px;width:20px;height:10px;margin-top:-5px;background-color:transparent;z-index:2}#button-18 .knobs span{width:20px;height:10px;padding:9px 4px;-webkit-transition:.3s ease all,left .3s cubic-bezier(.18,.89,.35,1.15);transition:.3s ease all,left .3s cubic-bezier(.18,.89,.35,1.15);z-index:1}#button-18 .checkbox:active+.knobs:before{left:10px;width:46px;height:4px;color:transparent;margin-top:-2px;background-color:#686b70;-webkit-transition:.3s ease all;transition:.3s ease all;overflow:hidden}#button-18 .checkbox:active+.knobs span{width:58px}#button-18 .checkbox:checked:active+.knobs:before{left:auto;right:10px;background-color:#686b70}#button-18 .checkbox:checked:active+.knobs span{margin-left:-38px}#button-18 .checkbox:checked+.knobs:before{content:'NRL';left:47px;color:#fff}#button-18 .checkbox:checked+.knobs span{left:42px;background-color:#686b70}#button-18 .checkbox:checked~.layer{background-color:#fcebeb}
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: 'Roboto Condensed', sans-serif
+}
+
+body {
+    background-color: #f0f1f2
+}
+
+main {
+    background-color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    width: 802px;
+    height: auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, .2);
+    height: 220px;
+    margin-top: 5%
+}
+
+.main_p {
+    justify-self: center;
+    -ms-flex-item-align: center;
+    align-self: center
+}
+
+.main_image {
+    width: 100%;
+    height: auto;
+    justify-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    max-height: 220px;
+    height: 100%;
+}
+
+.main_p--teams {
+    grid-area: teams;
+    font-size: 26px;
+    font-weight: 700;
+    padding-top: 20px;
+    background-color: #ececec
+}
+
+.main_p--date {
+    grid-area: date;
+    font-size: 24px;
+    padding-top: 4px
+}
+
+.main_p--time {
+    grid-area: time;
+    font-size: 26px;
+    padding-top: 26px
+}
+
+.main_image--a {
+    grid-area: image-a
+}
+
+.main_image--b {
+    grid-area: image-b
+}
+
+.main_p--arena {
+    grid-area: arena;
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: -9px
+}
+
+.main_p--tip {
+    display: grid;
+    grid-area: tip;
+    height: 100%;
+    width: 100%;
+    background-color: #2075bc
+}
+
+.main_p--tip-text {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 2px;
+    color: #fff
+}
+
+.main_p--pick {
+    grid-area: pick;
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background-color: #fad701
+}
+
+.main_p--pick-text {
+    font-size: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-top: 2px
+}
+
+.main_image-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center
+}
+
+.main-box {
+    display: grid;
+    align-self: center;
+    grid-template-columns: 1fr 90px 260px 1fr;
+    width: 802px;
+    grid-template-rows: 40px 30px 40px 50px 60px;
+    height: 220px;
+    background-color: #ececec;
+    grid-template-areas: "image-a teams teams image-b""image-a date date image-b""image-a time time image-b""image-a arena arena image-b""image-a tip pick image-b"
+}
+
+.form_main {
+    margin: auto;
+    width: 802px;
+    margin-top: 100px
+}
+
+.form {
+    text-decoration: none;
+    border: 0;
+    position: relative
+}
+
+.form_filedset {
+    text-decoration: none;
+    border: 0;
+    margin-top: 3%
+}
+
+.form_dateime,
+.form_teams {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.form_date-input,
+.form_select,
+.form_time-input {
+    height: 25px;
+    width: 220px;
+    background: 0 0;
+    border: none;
+    border-bottom: 1px solid #f0f1f2;
+    -webkit-box-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, .2);
+    margin-right: 60px
+}
+
+.form_label {
+    font-size: 10px;
+    padding-bottom: 5px
+}
+
+.form_label--checkbox {
+    position: absolute;
+    top: -43px;
+    left: 85px
+}
+
+.form_date,
+.form_team-a,
+.form_team-b,
+.form_time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.button-img {
+    border: none;
+    outline: 0;
+    display: block;
+    padding: 0;
+    z-index: 98;
+    margin: 0 auto;
+    -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, .3);
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    -webkit-transition: .2s;
+    transition: .2s;
+    text-align: center;
+    position: absolute;
+    top: 20%;
+    right: 80px
+}
+
+.button-img:active {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+    -webkit-box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, .3)
+}
+
+.button-img:hover {
+    cursor: pointer;
+    background-color: #fff;
+    -webkit-box-shadow: 0 8px 15px 0 rgba(0, 0, 0, .3);
+    box-shadow: 0 8px 15px 0 rgba(0, 0, 0, .3)
+}
+
+.form_arena-tip {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 3%
+}
+
+.form_arena,
+.form_pick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.button {
+    position: absolute;
+    top: -20%;
+    width: 74px;
+    height: 35px;
+    margin: -20px auto 0 auto;
+    overflow: hidden;
+    -webkit-box-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 .125rem .125rem 0 rgba(0, 0, 0, .2)
+}
+
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3
+}
+
+.knobs {
+    z-index: 2
+}
+
+#button-18 .knobs span,
+#button-18 .knobs:before {
+    content: 'AFL';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    background-color: #686b70;
+    border-radius: 2px
+}
+
+#button-18 .knobs:before {
+    top: 50%;
+    left: 8px;
+    width: 20px;
+    height: 10px;
+    margin-top: -5px;
+    background-color: transparent;
+    z-index: 2
+}
+
+#button-18 .knobs span {
+    width: 20px;
+    height: 10px;
+    padding: 9px 4px;
+    -webkit-transition: .3s ease all, left .3s cubic-bezier(.18, .89, .35, 1.15);
+    transition: .3s ease all, left .3s cubic-bezier(.18, .89, .35, 1.15);
+    z-index: 1
+}
+
+#button-18 .checkbox:active+.knobs:before {
+    left: 10px;
+    width: 46px;
+    height: 4px;
+    color: transparent;
+    margin-top: -2px;
+    background-color: #686b70;
+    -webkit-transition: .3s ease all;
+    transition: .3s ease all;
+    overflow: hidden
+}
+
+#button-18 .checkbox:active+.knobs span {
+    width: 58px
+}
+
+#button-18 .checkbox:checked:active+.knobs:before {
+    left: auto;
+    right: 10px;
+    background-color: #686b70
+}
+
+#button-18 .checkbox:checked:active+.knobs span {
+    margin-left: -38px
+}
+
+#button-18 .checkbox:checked+.knobs:before {
+    content: 'NRL';
+    left: 47px;
+    color: #fff
+}
+
+#button-18 .checkbox:checked+.knobs span {
+    left: 42px;
+    background-color: #686b70
+}
+
+#button-18 .checkbox:checked~.layer {
+    background-color: #fcebeb
+}
